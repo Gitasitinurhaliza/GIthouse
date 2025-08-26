@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Githouse</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+  <!-- Header -->
+  <header class="text-center py-16">
+    <h1 class="text-4xl md:text-5xl text-emerald-600">Githouse</h1>
+    <p class="mt-4 text-lg text-gray-600">Rumah Karya yang Terkunci</p>
+  </header>
+
+  <!-- Menu Utama -->
+  <main class="max-w-4xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Libra -->
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-emerald-100 cursor-pointer hover:shadow-xl transition duration-300"
+           onclick="unlockSection('libra')">
+        <h2 class="text-2xl font-bold text-emerald-600">Libra</h2>
+      </div>
+
+      <!-- Virgo -->
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-emerald-100 cursor-pointer hover:shadow-xl transition duration-300"
+           onclick="unlockSection('virgo')">
+        <h2 class="text-2xl font-bold text-emerald-600">Virgo</h2>
+      </div>
+
+      <!-- Karyaku -->
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center border border-emerald-100 cursor-pointer hover:shadow-xl transition duration-300"
+           onclick="loadSection('karyaku')">
+        <h2 class="text-2xl font-bold text-emerald-600">Karyaku</h2>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal Kunci -->
+  <div id="unlockModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-8 rounded-xl shadow-xl max-w-md w-full mx-4">
+      <h3 id="modalTitle" class="text-xl font-bold text-emerald-600 mb-4">Buka Libra</h3>
+      <p id="modalDesc" class="text-gray-600 mb-4">Masukkan kunci akses untuk membuka bagian Libra.</p>
+      <input type="text" id="accessKey" placeholder="Masukkan kunci..." 
+             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 mb-6">
+      <div class="flex gap-3">
+        <button onclick="validateKey()" 
+                class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">
+          Buka
+        </button>
+        <button onclick="closeModal()" 
+                class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full transition duration-300">
+          Batal
+        </button>
+      </div>
+    </div>
+  </div>
+
+<!-- Konten Chapter -->
+<div id="contentSection" class="max-w-3xl mx-auto px-6 pb-20 hidden">
+  <button onclick="goBack()" class="text-emerald-600 hover:underline mb-4">← Kembali</button>
+  <h2 id="sectionTitle" class="text-3xl font-bold text-emerald-600 mb-6"></h2>
+  <div id="chapterList" class="space-y-6"></div>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-gray-500 text-sm">
+    &copy; 2025 Githouse. Dibuat dengan ketenangan.
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
