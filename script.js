@@ -6,7 +6,7 @@ let currentChapterIndex = 0;
 let isViewingChapter = false; // Tambahkan variabel untuk melacak status
 
 // URL Backend — Ganti ke URL deploy nanti
-const API_URL = "http://localhost:5000"; // Ganti jadi: https://githouse-api.onrender.com saat deploy
+const API_URL = "https://githouse.vercel.app/"; // Ganti jadi: https://githouse-api.onrender.com saat deploy
 
 // Muat data dari backend saat halaman dibuka
 async function loadData() {
